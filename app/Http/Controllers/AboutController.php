@@ -7,60 +7,39 @@ use Illuminate\Http\Request;
 
 class AboutController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
-        $abouts = About::all();
-        return view('about_us.index',compact('abouts'));
+        $abouts = About::paginate(10);
+        return view('backend.about.index',compact('abouts'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
-        return view('about_us.create');
+        return view('backend.about.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+     public function store(Request $request)
     {
         //
         $request->validate([
-            'name' => 'required',
-            'telephone' => 'required',
-            'email' => 'required',
-            'adress' => 'required',
-            'about' => 'required'
+            'title' => 'required|min:5|max:255',
+            'description' => 'required',
+            'image' => 'required|mimes:jpeg,jpg,png|max:2048|dimensions:min_width=500,min_height=300',
+
         ]);
 
-        About::create($request->all());
-        return redirect()->route('abouts.index')->with('success','Aout US added successfully');
+        $storagepath = $request->file('image')->store('public/abouts');
+        $fileName = basename($storagepath);
+
+        $data = $request->all();
+        $data['image'] = $fileName;
+
+        About::create($data);
+
+        return redirect()->route('admin-about-list');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\About  $about
-     * @return \Illuminate\Http\Response
-     */
-    public function show(About $about)
-    {
-        //
-    }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -68,10 +47,11 @@ class AboutController extends Controller
      * @param  \App\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function edit(About $about)
+    public function edit($id)
     {
+        $abouts = About::whereid($id)->first();
         //
-        return view('about_us.edit',compact('about'));
+        return view('backend.about.edit', compact('abouts'));
     }
 
     /**
@@ -81,19 +61,33 @@ class AboutController extends Controller
      * @param  \App\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, About $about)
+    public function update(Request $request, $id)
     {
         //
         $request->validate([
-            'name' => 'required',
-            'telephone' => 'required',
-            'email' => 'required',
-            'adress' => 'required',
-            'about' => 'required'
+            'title' => 'required|min:5|max:255',
+            'description' => 'required',
+            'image' => 'mimes:jpeg,jpg,png|max:2048|dimensions:min_width=1900,min_height=1200',
+
         ]);
 
-        $about->update($request->all());
-        return redirect()->route('abouts.index')->with('success','About Us updated successfully');
+        $about = About::findOrFail($id);
+        $data = $request->all();
+
+        if($request->hasFile('image')){
+            $file_path = "public/abouts/".$about->image;
+            Storage::delete($file_path);
+
+            $storagepath = $request->file('image')->store('public/abouts');
+            $fileName = basename($storagepath);
+            $data['image'] = $fileName;
+
+        }
+
+        $about->fill($data);
+        $about->save();
+
+        return redirect()->route('admin-about-list');
     }
 
     /**
@@ -102,8 +96,13 @@ class AboutController extends Controller
      * @param  \App\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function destroy(About $about)
+    public function destroy($id)
     {
         //
+        $about = About::findOrFail($id);
+        $file_path = "public/abouts/".$about->image;
+            Storage::delete($file_path);
+        $about->delete();
+        return redirect()->back();
     }
 }

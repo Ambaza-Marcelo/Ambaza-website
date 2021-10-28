@@ -28,127 +28,54 @@
 @endif--}}
 <ul class="nav flex-column">
   <li class="nav-item active">
-    <a class="nav-link" href="{{ url('home') }}"><span class="nav-link-text">@lang('Dashboard')</span></a>
+    <a class="nav-link" href="{{ url('home') }}"><span class="nav-link-text">@lang('Tableau de bord')</span></a>
   </li>
-  @if(Auth::user()->role == 'admin')
-  <li class="nav-item">
-    <a class="nav-link" href="{{ route('plannings.index') }}"><span class="nav-link-text">@lang('Planning')</span></a>
-  </li>
-  <li class="nav-item dropdown">
-    <a role="button" href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="nav-link-text">@lang('stock')</span></a>
-    <ul class="dropdown-menu" style="width: 100%;">
-      <li class="nav-item">
-        <a class="dropdown-item" href="{{ route('foods.index') }}"><span class="nav-link-text">@lang('Foods')</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="dropdown-item" href="{{ route('drinks.index') }}"><span class="nav-link-text">@lang('Drinks')</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="dropdown-item" href=""><span class="nav-link-text">@lang('Capital')</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="dropdown-item" href="{{ route('incomes.index') }}"><span class="nav-link-text">@lang('Income')</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="dropdown-item" href="{{ route('expenses.index') }}"><span class="nav-link-text">@lang('Expense')</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="dropdown-item" href="#"><span class="nav-link-text">@lang('Income List')</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="dropdown-item" href="#"><span class="nav-link-text">@lang('Expense List')</span></a>
-      </li>
-    </ul>
-  </li>
-
+  
+  @if(Auth::user()->role == 'admin' || Auth::user()->role == 'technician')
   <li class="nav-item dropdown">
     <a role="button" href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="nav-link-text">@lang('Site')</span></a>
     <ul class="dropdown-menu" style="width: 100%;">
       <li class="nav-item">
-        <a class="dropdown-item" href="{{ URL::route('site.dashboard') }}"><span class="nav-link-text">@lang('Analythics')</span></a>
+        <a class="dropdown-item" href="{{ URL::route('site.dashboard') }}"><span class="nav-link-text">@lang('Analytique')</span></a>
       </li>
       <li class="nav-item">
-        <a class="dropdown-item" href="{{URL::route('slider.index')}}"><span class="nav-link-text">@lang('Sliders')</span></a>
+        <a class="dropdown-item" href="{{URL::route('sliders.index')}}"><span class="nav-link-text">@lang('Slider')</span></a>
+      </li>
+
+      <li class="nav-item">
+        <a class="dropdown-item" href="{{ URL::route('site.subscribe') }}"><span class="nav-link-text">@lang('Abonnés')</span></a>
       </li>
       <li class="nav-item">
-        <a class="dropdown-item" href="{{ URL::route('site.service') }}"><span class="nav-link-text">@lang('Our Services')</span></a>
+        <a class="dropdown-item" href="{{ URL::route('site.gallery') }}"><span class="nav-link-text">@lang('Gallerie')</span></a>
       </li>
       <li class="nav-item">
-        <a class="dropdown-item" href="{{ URL::route('site.subscribe') }}"><span class="nav-link-text">@lang('Subscribers')</span></a>
+        <a class="dropdown-item" href="{{ URL::route('site.contact_us') }}"><span class="nav-link-text">@lang('Contact')</span></a>
       </li>
       <li class="nav-item">
-        <a class="dropdown-item" href="{{ URL::route('site.service') }}"><span class="nav-link-text">@lang('Services')</span></a>
+        <a class="dropdown-item" href="{{ URL::route('site.faq') }}"><span class="nav-link-text">@lang('FAQ')</span></a>
       </li>
       <li class="nav-item">
-        <a class="dropdown-item" href="{{ URL::route('site.gallery') }}"><span class="nav-link-text">@lang('Gallery List')</span></a>
+        <a class="dropdown-item" href="{{ URL::route('events.index') }}"><span class="nav-link-text">@lang('Evénément')</span></a>
       </li>
       <li class="nav-item">
-        <a class="dropdown-item" href="{{ URL::route('site.contact_us') }}"><span class="nav-link-text">@lang('Contact Us')</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="dropdown-item" href="{{ URL::route('site.faq') }}"><span class="nav-link-text">@lang('Faq')</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="dropdown-item" href="{{ URL::route('event.index') }}"><span class="nav-link-text">@lang('Event')</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="dropdown-item" href="{{ URL::route('point-keys.index') }}"><span class="nav-link-text">@lang('Point Key')</span></a>
+        <a class="dropdown-item" href="{{ URL::route('point-keys.index') }}"><span class="nav-link-text">@lang('Clé de point')</span></a>
       </li>
     </ul>
-  </li>
-  <li class="nav-item dropdown">
-    <a role="button" href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="nav-link-text">@lang('HRM')</span></a>
-    <ul class="dropdown-menu" style="width: 100%;">
-      <!-- Dropdown menu links -->
-      <li>
-        <a class="dropdown-item" href="{{route('employees.index') }}"><span class="nav-link-text">@lang('Employees')</span></a>
-      </li>
-      <li>
-        <a class="dropdown-item" href="{{route('leaves.index')}}"><span class="nav-link-text">@lang('Leave')</span></a>
-      </li>
-      <li>
-        <a class="dropdown-item" href=""><span class="nav-link-text">@lang('accountants')</span></a>
-      </li>
-    </ul>
-  </li>
-  <li class="nav-item dropdown">
-    <a role="button" href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="nav-link-text">@lang('Rooms')</span></a>
-    <ul class="dropdown-menu" style="width: 100%;">
-      <!-- Dropdown menu links -->
-      <li>
-        <a class="dropdown-item" href="{{route('room.index')}}"><span class="nav-link-text">@lang('Room')</span></a>
-      </li>
-      <li>
-        <a class="dropdown-item" href="{{ route('categories.index') }}"><span class="nav-link-text">@lang('Category')</span></a>
-      </li>
-    </ul>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href=""><span class="nav-link-text">@lang('Promotions')</span></a>
-  </li>
-  <li class="nav-item dropdown">
-    <a role="button" href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="nav-link-text">@lang('Commands')</span></a>
-    <ul class="dropdown-menu" style="width: 100%;">
-      <!-- Dropdown menu links -->
-      <li>
-        <a class="dropdown-item" href="{{route('command-food.index')}}"><span class="nav-link-text">@lang('Food')</span></a>
-      </li>
-      <li>
-        <a class="dropdown-item" href="{{route('command-drink.index')}}"><span class="nav-link-text">@lang('Drink')</span></a>
-      </li>
-    </ul>
-  </li>
-   <li class="nav-item">
-    <a class="nav-link" href="{{ route('abouts.index') }}"><span class="nav-link-text">@lang('About Us')</span></a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="{{ route('informations.index') }}"><span class="nav-link-text">@lang('Informations')</span></a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href=""><span class="nav-link-text">@lang('Advantages')</span></a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="{{ url('admin/report') }}"><span class="nav-link-text">@lang('Reports')</span></a>
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('admin-news-list')}}"><span class="nav-link-text">@lang('News')</span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('admin-service-list')}}"><span class="nav-link-text">@lang('Services')</span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('admin-about-list')}}"><span class="nav-link-text">@lang('About')</span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('admin-encourage-list')}}"><span class="nav-link-text">@lang('Encourage')</span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('admin-post-list')}}"><span class="nav-link-text">@lang('Post')</span></a>
+    </li>
   </li>
   @endif
 </ul>

@@ -2,30 +2,50 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\SiteMeta;
 use App\Slider;
 use App\PointKey;
-use App\CommandDrink;
-use App\Room;
 use App\Event;
-use Validator;
-use Illuminate\Support\Facades\Mail;
+use App\News;
+use App\Encourage;
+use App\About;
+use App\Post;
+use App\Service;
+
 
 class WelcomeController extends Controller
 {
     //
-
     public function home()
     {
 
-        $sliders = Slider::orderBy('order','asc')->get()->take(10);
+        $sliders = DB::table('sliders')->orderBy('created_at','desc')->first();
         $ourService = SiteMeta::where('meta_key', 'our_service_text')->first();
         $pointKeys = PointKey::orderBy('created_at','desc')->paginate();
+
+
+        $news = DB::table('news')->orderBy('created_at','desc')->first();
+        $newz = DB::table('news')->first();
+
+        $events = DB::table('events')->orderBy('created_at','desc')->first();
+        $eventz = DB::table('events')->first();
+        $services = Service::all();
+        $encourages = Encourage::with('service')->get();
+
         return view('welcome', compact(
             'sliders',
             'ourService',
-            'pointKeys'
+            'pointKeys',
+            'news',
+            'newz',
+            'events',
+            'eventz',
+            'services',
+            'encourages'
             
         ));
     }
@@ -54,12 +74,8 @@ class WelcomeController extends Controller
             'meta_key' => 'subscriber',
             'meta_value' => $request->get('email')
             ]);
-        $response = [
-            'success' => true,
-            'message' => 'Thank your for subscribing us.'
-        ];
 
-        return $response;
+        return back()->with('success','Thank your for subscribing us.');
 
 
     }
@@ -67,23 +83,31 @@ class WelcomeController extends Controller
     public function gallery()
     {
         //for get request
-        $images = SiteMeta::where('meta_key','gallery')->paginate(env('MAX_RECORD_PER_PAGE_FRONT',10));
-        return view('frontend.gallery', compact('images'));
+        $pictures = SiteMeta::where('meta_key','gallery')->get();
+
+        return view('frontend.gallery', compact('pictures'));
 
     }
-    public function room(){
-        $rooms = Room::orderBy('created_at','desc')->paginate(10);
-        return view('frontend.room',compact('rooms'));
-    }
-
-    public function drink(){
-        $drinks = CommandDrink::orderBy('created_at','desc')->paginate(20);
-        return view('frontend.drink',compact('drinks'));
-    }
-
+    /*
     public function event(){
-        $events = Event::orderBy('created_at','desc')->paginate(20);
+        $events = Event::orderBy('created_at','desc');
         return view('frontend.event',compact('events'));
+    }
+    */
+
+    public function service()
+    {
+        $services = Service::all();
+        return view('frontend.services',compact('services'));
+    }
+
+    public function blog()
+    {
+        $posts = Post::orderBy('created_at','desc')->paginate(10);
+        $news = News::orderBy('created_at','desc')->get();
+        $encourages = Encourage::orderBy('created_at','desc')->paginate(10);
+
+        return view('frontend.blog',compact('posts','news','encourages'));
     }
 
     /* Contact Us
@@ -142,14 +166,21 @@ class WelcomeController extends Controller
 
     }
 
-    /* FAQ
-     * @return mixed
-     */
+    /*
     public function faq()
     {
 
         $faqs = SiteMeta::where('meta_key','faq')->get();
         return view('frontend.faq', compact('faqs'));
 
+    }
+
+    */
+
+    public function about()
+    {
+        $abouts = DB::table('abouts')->first();
+        $encourages = Encourage::with('service')->get();
+        return view('frontend.about',compact('abouts','encourages'));
     }
 }

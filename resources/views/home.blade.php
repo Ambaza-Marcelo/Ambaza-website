@@ -26,61 +26,27 @@
                     <div class="col-sm-16">
                             <div class="panel panel-default" style="background-color: rgba(242,245,245,0.8);">
                                 <div class="panel-body">
-                                    <h3>@lang('Welcome to') {{Auth::user()->hotel->name}}</h3>
-                                    @lang('hfjjjdjjfjjjkjfjjefh.')
+                                    <h3>@lang('Welcome to Ambaza website') </h3>
                                 </div>
                             </div>
                             
                         </div>
+                    @if(Auth::user()->role == 'admin')
                     <div class="row">
-                        <div class="col-md-6 col-sm-14">
-                            <div class="">
-                                <span class=""></i></span>
-
-                                <div class="jumbotron">
-                                    <img src="{{asset('images/clipart5.png')}}" alt="subscribers">
-                                    <span>Subscribers</span>
-                                    <span"><small></small></span>
-                                </div>
-                            </div>
-                        </div>
 
                         <div class="col-md-6 col-sm-14">
                             <div class="">
                                 <div class="jumbotron">
-                                    <img src="{{asset('images/clipart3.png')}}" alt="photos">
-                                    <span class="i">Photos</span>
-                                    <span class=""></span>
+                                    <a href="{{url('register/technician')}}">
+                                    <img src="{{asset('cliparts/9000.jpg')}}" height="100" alt="photos">
+                                    <span class="i">Techniciens</span>
+                                    </a>
                                 </div>
                             </div>
                             <!-- /.info-box -->
                         </div>
                     </div>
-
-                    <div class="row">
-                        <div class="col-md-6 col-sm-14">
-                            <div class="">
-                                <span class=""></i></span>
-
-                                <div class="jumbotron">
-                                    <img src="{{asset('images/clipart2.png')}}" alt="subscribers">
-                                    <span>Employees</span>
-                                    <span"></span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 col-sm-14">
-                            <div class="">
-                                <div class="jumbotron">
-                                    <img src="{{asset('images/clipart1.png')}}" alt="photos">
-                                    <span class="i">Bookings</span>
-                                    <span class=""></span>
-                                </div>
-                            </div>
-                            <!-- /.info-box -->
-                        </div>
-                    </div>
+                    @endif
                 </div>
             </div>
         </div>
