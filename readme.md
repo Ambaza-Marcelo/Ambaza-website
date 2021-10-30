@@ -3,7 +3,7 @@
 
 <h2>screenshoots</h2>
 
-<h3>How To install</h3>
+<h3>How To install:</h3>
 <p>
     <ul>to connect:
         <li>Email:ambaza@gmail.com</li>
