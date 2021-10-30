@@ -4,6 +4,9 @@
 <h2>screenshoots</h2>
 <img src="screenshoots/blog.png"><br>
 <img src="screenshoots/computer.png"><br>
+<img src="screenshoots/about.png"><br>
+<img src="screenshoots/services.png"><br>
+<img src="screenshoots/post.png"><br>
 
 <h3>How To install:</h3>
 <p>
