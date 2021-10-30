@@ -101,7 +101,14 @@ class WelcomeController extends Controller
         return view('frontend.services',compact('services'));
     }
 
-    
+    public function blog()
+    {
+        $posts = Post::orderBy('created_at','desc')->paginate(10);
+        $news = News::orderBy('created_at','desc')->get();
+        $encourages = Encourage::orderBy('created_at','desc')->paginate(10);
+
+        return view('frontend.blog',compact('posts','news','encourages'));
+    }
 
     /* Contact Us
      * @return mixed
