@@ -3,6 +3,7 @@
 
 <h2>screenshoots</h2>
 <img src="screenshoots/blog.png"><br>
+<img src="screenshoots/computer.png"><br>
 
 <h3>How To install:</h3>
 <p>
