@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\SiteMeta;
-//use App\Slider;
+use App\Slider;
 use App\PointKey;
 use App\Event;
 use App\News;
