@@ -12,7 +12,7 @@
 <p>
     <ul>to connect:
         <li>Email:ambaza@gmail.com</li>
-        <li>Burundi</li>
+        <li>Password:Burundi</li>
     </ul>
 </p>
 <ol>
