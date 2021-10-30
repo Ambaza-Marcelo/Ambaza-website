@@ -2,6 +2,7 @@
 <h1>Ambaza Marcellin Web site</h1>
 
 <h2>screenshoots</h2>
+<img src="screenshoots/blog.png"><br>
 
 <h3>How To install:</h3>
 <p>
