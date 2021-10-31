@@ -6,13 +6,9 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css" rel="stylesheet">
 <div class="container{{ (\Auth::user()->role == 'master')? '' : '-fluid' }}">
     <div class="row">
-        @if(\Auth::user()->role != 'master')
         <div class="col-md-2" id="side-navbar">
             @include('layouts.leftside-menubar')
         </div>
-        @else
-        
-        @endif
         <div class="col-md-8" id="main-container">
             @if (session('status'))
             <div class="alert alert-success">
