@@ -10,10 +10,9 @@
             @include('layouts.leftside-menubar')
         </div>
         <div class="col-md-8" id="main-container">
-            @if (session('status'))
+            @if (session('success'))
             <div class="alert alert-success">
-                {{ session('status') }}
-                {{-- Display View admin links --}}
+                {{ session('success') }}
                 @if (session('register_hotel_id'))
                     <a href="{{ url('hotel/admin-list/' . session('register_hotel_id')) }}" target="_blank" class="text-white pull-right">@lang('View Admins')</a>
                 @endif
