@@ -3,4 +3,3 @@
 	<div>
 		<input type="text" class="typeahead form-control">
 	</div>
-@endsection
