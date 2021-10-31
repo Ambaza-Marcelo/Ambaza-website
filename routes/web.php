@@ -37,11 +37,8 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::middleware(['auth', 'admin'])->group(function () {
-    Route::get('admin/images','FileController@create');
-    Route::post('file','FileController@store');
 
     //site web routes
-     
     Route::get('/site/dashboard', 'SiteController@dashboard')
         ->name('site.dashboard');
     Route::get('sliders/index','SliderController@index')
@@ -60,6 +57,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
         ->name('site.service');
     Route::post('site/service','SiteController@serviceContent')
         ->name('site.service');
+
+    
 
 
     Route::get('site/subscribe','SiteController@subscribe')
