@@ -28,11 +28,6 @@ Route::get('contact-us',function(){
 Auth::routes();
 
 
-Route::middleware(['auth', 'master'])->group(function () {
-    Route::get('/masters', 'MasterController@index')->name('masters.index');
-    Route::resource('/hotels', 'HotelController')->only(['index', 'edit', 'store', 'update']);
-});
-
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::middleware(['auth', 'customer'])->prefix('grades')->group(function () {
