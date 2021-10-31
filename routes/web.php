@@ -37,7 +37,6 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::middleware(['auth', 'admin'])->group(function () {
-    Route::get('/settings', 'SettingController@index')->name('settings.index');
     Route::get('admin/images','FileController@create');
     Route::post('file','FileController@store');
 
