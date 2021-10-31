@@ -148,7 +148,10 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
 //auth technician
 Route::middleware(['auth', 'technician'])->group(function () {
-    
+    Route::get('events/index','EventController@index')->name('events.index');
+    Route::post('events/store','EventController@store')->name('events.store');
+    Route::get('events/create','EventController@create')->name('events.create');
+    Route::get('events/edit/{id}','EventController@edit')->name('events.edit');
 });
 
 
