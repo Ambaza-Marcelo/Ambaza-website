@@ -1,9 +1,5 @@
 <div class="row">
   <div class="col-md-2">
-    
-        <img src="{{asset('01-progress.gif')}}" data-src="https://img.icons8.com/color/48/000000/businesswoman.png" class="img-thumbnail" width="100%">
-      @endif
-    @endif
     @if(\Auth::user()->role == 'admin')
     <div class="rows" style="font-size:10px;margin-top:5%;">
       <input type="hidden" id="picPath" name="pic_path">
