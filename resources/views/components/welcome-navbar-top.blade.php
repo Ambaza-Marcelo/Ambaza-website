@@ -17,21 +17,7 @@
                         <li>
                             <a href="{{ url('news') }}">
                                 @lang('News')
-                            </a>
-
-                        </li>
-                        <li>
-                            <a href="{{ url('rooms') }}">
-                                @lang('Infrastructures')
-                            </a>
-
-                        </li>
-                        <li>
-                            <a href="{{ url('restaurations') }}">
-                                @lang('Restauration')
-                            </a>
-
-                        </li>
+                        
                     </ul>
                 </li>
                 
