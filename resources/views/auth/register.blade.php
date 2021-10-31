@@ -11,13 +11,7 @@
             @include('layouts.leftside-menubar')
         </div>
         @else
-        <div class="col-md-3" id="side-navbar">
-            <ul class="nav flex-column">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{{ route('hotels.index') }}"><span class="nav-link-text">@lang('Back to Manage hotel')</span></a>
-                </li>
-            </ul>
-        </div>
+        
         @endif
         <div class="col-md-8" id="main-container">
             @if (session('status'))
