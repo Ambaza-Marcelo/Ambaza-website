@@ -58,7 +58,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::post('site/service','SiteController@serviceContent')
         ->name('site.service');
 
-    
+
 
 
     Route::get('site/subscribe','SiteController@subscribe')
@@ -129,19 +129,6 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::post('admin/about/store','AboutController@store')->name('admin-about-store');
     Route::put('admin/about/update/{id}','AboutController@update')->name('admin-about-update');
     Route::delete('admin/about/destroy/{id}','AboutController@destroy')->name('admin-about-destroy');
-
-
-
-    //caissier 
-    Route::get('register/accountant', function () {
-        session([
-        'register_role' => 'accountant',
-        ]);
-
-        return redirect()->route('register');
-    });
-
-    Route::post('register/accountant', 'UserController@storeAccountant');
 
     //technician
 
