@@ -25,17 +25,7 @@
                 <li><a href="{{url('event-available')}}" style="color: #000;">@lang('Evénément')</a></li>
                 <li><a href="#contact" style="color: #000;">@lang('Contact')</a></li>
                 <li><a href="#help" style="color: #000;">@lang('Aide')</a></li>
-                <!--<li class="nav-item">
-                    
-                        @if (Route::has('login'))
-                                @auth
-                                    <a href="{{ url('/home') }}" class="nav-link nav-link-align-btn">@lang('Home')</a>
-                                @else
-                                    <a href="{{ route('login') }}" class="nav-link nav-link-align-btn">@lang('Login')</a>
-                                @endauth
-                        @endif
-                    
-                </li>-->
+               
             </ul>
         </div>
     </div>
