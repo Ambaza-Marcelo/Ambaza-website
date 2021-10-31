@@ -1,8 +1,6 @@
 <div class="row">
   <div class="col-md-2">
-    @if(!empty($user->pic_path))
-    <img src="{{asset('01-progress.gif')}}" data-src="{{url($user->pic_path)}}" class="img-thumbnail" id="my-profile" alt="Profile Picture" width="100%">
-    @else
+    
       @if(strtolower($user->gender) == trans('male'))
         <img src="{{asset('01-progress.gif')}}" data-src="https://img.icons8.com/color/48/000000/guest-male--v1.png" class="img-thumbnail" width="100%">
       @else
