@@ -27,8 +27,6 @@ Route::get('contact-us',function(){
 
 Auth::routes();
 
-Route::get('images-list','FileController@index');
-
 
 Route::middleware(['auth', 'master'])->group(function () {
     Route::get('/masters', 'MasterController@index')->name('masters.index');
