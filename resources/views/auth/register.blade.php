@@ -13,9 +13,6 @@
             @if (session('success'))
             <div class="alert alert-success">
                 {{ session('success') }}
-                @if (session('register_hotel_id'))
-                    <a href="{{ url('hotel/admin-list/' . session('register_hotel_id')) }}" target="_blank" class="text-white pull-right">@lang('View Admins')</a>
-                @endif
             </div>
             @endif
             <div class="panel panel-default">
