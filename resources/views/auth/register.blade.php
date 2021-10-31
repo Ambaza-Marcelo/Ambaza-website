@@ -87,7 +87,7 @@
                                     required>
                             </div>
                         </div>
-                        @if(session('register_role', 'accountant') == 'accountant' || session('register_role', 'technician') == 'technician')
+                        @if(session('register_role', 'technician') == 'technician')
 
                         <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
                             <label for="address" class="col-md-4 control-label"> @lang('Address')</label>
