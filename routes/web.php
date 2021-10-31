@@ -30,9 +30,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::middleware(['auth', 'customer'])->prefix('grades')->group(function () {
-  
-});
 
 Route::middleware(['auth'])->group(function () {
     Route::get('user/config/change_password', 'UserController@changePasswordGet');
