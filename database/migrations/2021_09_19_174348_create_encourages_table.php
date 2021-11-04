@@ -18,9 +18,7 @@ class CreateEncouragesTable extends Migration
             $table->string('name');
             $table->text('description');
             $table->string('image');
-            $table->bigInteger('service_id')->unsigned();
-            $table->foreign('service_id')->references('id')->on('services')->onUpdate('cascade')->onDelete('cascade');
-            $table->timestamps();
+            
 
         });
     }
