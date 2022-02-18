@@ -7,7 +7,7 @@
             <div class="col-md-12">
                 Update about
                 <div class="box box-info">
-                    <form novalidate id="entryForm" action="{{route('admin-about-update',$about->id) }}" method="post" enctype="multipart/form-data">
+                    <form novalidate id="entryForm" action="{{route('admin-about-update',$abouts->id) }}" method="post" enctype="multipart/form-data">
                         <div class="box-body">
                             @csrf
                             @method('put')
@@ -15,7 +15,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group has-feedback">
                                         <label for="title">Title<span class="text-danger"></span></label>
-                                        <input autofocus type="text" class="form-control" name="title" value="{{$about->title}}" required minlength="2" maxlength="255">
+                                        <input autofocus type="text" class="form-control" name="title" value="{{$abouts->title}}" required minlength="2" maxlength="255">
                                         <span class="fa fa-info form-control-feedback"></span>
                                         <span class="text-danger">{{ $errors->first('title') }}</span>
                                     </div>
@@ -23,7 +23,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group has-feedback">
                                         <label for="description">Description<span class="text-danger"></span></label>
-                                                <textarea class="form-control" name="description">{{$about->description}}</textarea>
+                                                <textarea class="form-control" name="description">{{$abouts->description}}</textarea>
                                         <span class="fa fa-info form-control-feedback"></span>
                                         <span class="text-danger">{{ $errors->first('description') }}</span>
                                     </div>

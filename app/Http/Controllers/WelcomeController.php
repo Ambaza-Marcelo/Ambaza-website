@@ -7,9 +7,6 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\SiteMeta;
-use App\Slider;
-use App\PointKey;
-use App\Event;
 use App\News;
 use App\Encourage;
 use App\About;
@@ -23,27 +20,15 @@ class WelcomeController extends Controller
     public function home()
     {
 
-        $sliders = DB::table('sliders')->orderBy('created_at','desc')->first();
-        $ourService = SiteMeta::where('meta_key', 'our_service_text')->first();
-        $pointKeys = PointKey::orderBy('created_at','desc')->paginate();
-
 
         $news = DB::table('news')->orderBy('created_at','desc')->first();
         $newz = DB::table('news')->first();
-
-        $events = DB::table('events')->orderBy('created_at','desc')->first();
-        $eventz = DB::table('events')->first();
         $services = Service::all();
         $encourages = Encourage::with('service')->get();
 
         return view('welcome', compact(
-            'sliders',
-            'ourService',
-            'pointKeys',
             'news',
             'newz',
-            'events',
-            'eventz',
             'services',
             'encourages'
             
@@ -83,7 +68,7 @@ class WelcomeController extends Controller
     public function gallery()
     {
         //for get request
-        $pictures = SiteMeta::where('meta_key','gallery')->get();
+        $pictures = SiteMeta::where('meta_key','gallery')->paginate(20);
 
         return view('frontend.gallery', compact('pictures'));
 
@@ -136,7 +121,7 @@ class WelcomeController extends Controller
             //now send mail
             $data = [
                 'from' =>  $request->get('email'),
-                'to'  => env('MAIL_RECEIVER','marcelin@net-telecom.net'),
+                'to'  => env('MAIL_RECEIVER','ambazamarcellin2001@gmail.com'),
                 'subject' => "[".$request->get('name')."]".$request->get('subject'),
                 'body' => $request->get('message')
             ];
@@ -157,25 +142,8 @@ class WelcomeController extends Controller
 
 
         }
-        //for get request
-        $address = SiteMeta::where('meta_key', 'contact_address')->first();
-        $phone = SiteMeta::where('meta_key', 'contact_phone')->first();
-        $email = SiteMeta::where('meta_key', 'contact_email')->first();
-        $latlong = SiteMeta::where('meta_key', 'contact_latlong')->first(); 
-        return view('frontend.contact_us', compact('address', 'phone', 'email'));
 
     }
-
-    /*
-    public function faq()
-    {
-
-        $faqs = SiteMeta::where('meta_key','faq')->get();
-        return view('frontend.faq', compact('faqs'));
-
-    }
-
-    */
 
     public function about()
     {

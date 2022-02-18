@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Encourage;
 use App\Service;
+use Illuminate\Support\Facades\Storage;
 
 class EncourageController extends Controller
 {
@@ -26,8 +27,8 @@ class EncourageController extends Controller
         $request->validate([
             'name' => 'required|min:5|max:255',
             'description' => 'required',
-            'image' => 'required|mimes:jpeg,jpg,png|max:2048|dimensions:min_width=500,min_height=300',
-            'service_id' => 'required',
+            'image' => 'required|mimes:jpeg,jpg,png|max:2048|dimensions:min_width=50,min_height=40',
+            'service_id' => '',
 
         ]);
 
@@ -52,6 +53,7 @@ class EncourageController extends Controller
      */
     public function edit($id)
     {
+        $services = Service::get();
     	$encourage = Encourage::whereid($id)->first();
         //
         return view('backend.encourage.edit', compact('encourage'));
@@ -70,8 +72,8 @@ class EncourageController extends Controller
         $request->validate([
             'name' => 'required|min:5|max:255',
             'description' => 'required',
-            'image' => 'mimes:jpeg,jpg,png|max:2048|dimensions:min_width=1900,min_height=1200',
-            'service_id' => 'required',
+            'image' => 'mimes:jpeg,jpg,png|max:2048|dimensions:min_width=300,min_height=200',
+            'service_id' => '',
 
         ]);
 
@@ -79,7 +81,7 @@ class EncourageController extends Controller
         $data = $request->all();
 
         if($request->hasFile('image')){
-            $file_path = "public/encourages/".$encourage->image;
+            $file_path = 'public/encourages/'.$encourage->image;
             Storage::delete($file_path);
 
             $storagepath = $request->file('image')->store('public/encourages');

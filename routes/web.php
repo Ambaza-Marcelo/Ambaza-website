@@ -41,18 +41,6 @@ Route::middleware(['auth', 'admin'])->group(function () {
     //site web routes
     Route::get('/site/dashboard', 'SiteController@dashboard')
         ->name('site.dashboard');
-    Route::get('sliders/index','SliderController@index')
-        ->name('sliders.index');
-    Route::get('sliders/create','SliderController@create')
-        ->name('sliders.create');
-    Route::post('sliders/store','SliderController@store')
-        ->name('sliders.store');
-    Route::get('sliders/edit/{id}','SliderController@edit')
-        ->name('sliders.edit');
-    Route::put('sliders/update/{id}','SliderController@update')
-        ->name('sliders.update');
-    Route::delete('sliders/destroy/{id}','SliderController@destroy')
-        ->name('sliders.destroy');
     Route::get('site/service','SiteController@serviceContent')
         ->name('site.service');
     Route::post('site/service','SiteController@serviceContent')
@@ -75,25 +63,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
         ->name('site.contact_us');
     Route::post('site/contact-us','SiteController@contactUs')
         ->name('site.contact_us');
-    Route::get('site/fqa','SiteController@faq')
-        ->name('site.faq');
-    Route::post('site/fqa','SiteController@faq')
-        ->name('site.faq');
-    Route::post('site/faq/{id}','SiteController@faqDelete')
-        ->name('site.faq_delete');
-    Route::get('site/settings','SiteController@settings')
-        ->name('site.settings');
-    Route::post('site/settings','SiteController@settings')
-        ->name('site.settings');
     
-    Route::get('events/index','EventController@index')->name('events.index');
-    Route::get('events/create','EventController@create')->name('events.create');
-    Route::get('events/edit/{id}','EventController@edit')->name('events.edit');
-    Route::post('events/store','EventController@store')->name('events.store');
-    Route::put('events/update/{id}','EventController@update')->name('events.update');
-    Route::delete('events/destroy/{id}','EventController@destroy')->name('events.destroy');
-
-    Route::resource('point-keys','PointKeyController');
 
     Route::get('admin/news/list','NewsController@index')->name('admin-news-list');
     Route::get('admin/news/create','NewsController@create')->name('admin-news-create');
@@ -148,12 +118,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
 //auth technician
 Route::middleware(['auth', 'technician'])->group(function () {
-    Route::get('events/index','EventController@index')->name('events.index');
-    Route::get('events/create','EventController@create')->name('events.create');
-    Route::get('events/edit/{id}','EventController@edit')->name('events.edit');
-    Route::post('events/store','EventController@store')->name('events.store');
-    Route::put('events/update/{id}','EventController@update')->name('events.update');
-    Route::delete('events/destroy/{id}','EventController@destroy')->name('events.destroy');
+   
     
 });
 

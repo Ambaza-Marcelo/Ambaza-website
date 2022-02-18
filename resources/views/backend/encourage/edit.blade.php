@@ -20,20 +20,7 @@
                                         <span class="text-danger">{{ $errors->first('name') }}</span>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="form-group has-feedback">
-                                        <label for="service">Service<span class="text-danger"></span></label>
-                                        
-                                        <select id="service" class="form-control" name="service_id">
-                                            <option selected="selected">Select service</option>
-                                              @foreach($services as $service)
-                                                <option value="{{$service->id}}">{{$service->name}}</option>
-                                              @endforeach
-                                        </select>
-                                        <span class="form-control-feedback"></span>
-                                        <span class="text-danger">{{ $errors->first('service') }}</span>
-                                    </div>
-                                </div>
+                                
                             </div>
                             <div class="row">
                                  <div class="col-md-4">

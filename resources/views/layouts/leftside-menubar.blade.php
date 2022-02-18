@@ -23,9 +23,6 @@
     padding: 8px 15px;
   }
 </style>
-{{--@if(Auth::user()->role != 'master')
-
-@endif--}}
 <ul class="nav flex-column">
   <li class="nav-item active">
     <a class="nav-link" href="{{ url('home') }}"><span class="nav-link-text">@lang('Tableau de bord')</span></a>
@@ -39,26 +36,10 @@
         <a class="dropdown-item" href="{{ URL::route('site.dashboard') }}"><span class="nav-link-text">@lang('Analytique')</span></a>
       </li>
       <li class="nav-item">
-        <a class="dropdown-item" href="{{URL::route('sliders.index')}}"><span class="nav-link-text">@lang('Slider')</span></a>
-      </li>
-
-      <li class="nav-item">
         <a class="dropdown-item" href="{{ URL::route('site.subscribe') }}"><span class="nav-link-text">@lang('Abonnés')</span></a>
       </li>
       <li class="nav-item">
         <a class="dropdown-item" href="{{ URL::route('site.gallery') }}"><span class="nav-link-text">@lang('Gallerie')</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="dropdown-item" href="{{ URL::route('site.contact_us') }}"><span class="nav-link-text">@lang('Contact')</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="dropdown-item" href="{{ URL::route('site.faq') }}"><span class="nav-link-text">@lang('FAQ')</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="dropdown-item" href="{{ URL::route('events.index') }}"><span class="nav-link-text">@lang('Evénément')</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="dropdown-item" href="{{ URL::route('point-keys.index') }}"><span class="nav-link-text">@lang('Clé de point')</span></a>
       </li>
     </ul>
     <li class="nav-item">

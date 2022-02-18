@@ -26,26 +26,40 @@
                     <div class="col-sm-16">
                             <div class="panel panel-default" style="background-color: rgba(242,245,245,0.8);">
                                 <div class="panel-body">
-                                    <h3>@lang('Welcome to Ambaza website') </h3>
+                                    <h3>@lang('Welcome To Ambaza Marcellin website') </h3>
+                                    <img src="assets/img/8000.svg" height="100">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <img src="assets/img/7000.svg" height="100">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <img src="assets/img/6666.svg" height="100">
                                 </div>
                             </div>
                             
                         </div>
                     @if(Auth::user()->role == 'admin')
-                    <div class="row">
-
+                        <div class="col-md-6 col-sm-14">
+                                    <a href="{{url('register/technician')}}">
+                                    <img src="{{asset('assets/img/9000.svg')}}" height="200" alt="photos">
+                                    <span class="i">Techniciens</span>
+                                    </a>               
+                        </div>
                         <div class="col-md-6 col-sm-14">
                             <div class="">
-                                <div class="jumbotron">
-                                    <a href="{{url('register/technician')}}">
-                                    <img src="{{asset('cliparts/9000.jpg')}}" height="100" alt="photos">
-                                    <span class="i">Techniciens</span>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- /.info-box -->
+                                <img src="assets/img/9999.svg" height ="200">
+                            </div>                
                         </div>
-                    </div>
                     @endif
                 </div>
             </div>

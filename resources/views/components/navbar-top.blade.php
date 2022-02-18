@@ -32,18 +32,6 @@
                         <span class="label label-danger">
                             {{ ucfirst(\Auth::user()->role) }}
                         </span>&nbsp;&nbsp;
-                        @if(!empty(Auth::user()->pic_path))
-                        <img src="{{asset('01-progress.gif')}}" data-src="{{url(Auth::user()->pic_path)}}" alt="Profile Picture"
-                            style="vertical-align: middle;border-style: none;border-radius: 50%;width: 30px;height: 30px;">
-                        @else
-                        @if(strtolower(Auth::user()->gender) == 'male')
-                        <img src="{{asset('01-progress.gif')}}" data-src="https://img.icons8.com/color/48/000000/architect.png"
-                            alt="Profile Picture" style="vertical-align: middle;border-style: none;border-radius: 50%;width: 30px;height: 30px;">
-                        @else
-                        <img src="{{asset('01-progress.gif')}}" data-src="https://img.icons8.com/color/48/000000/architect-female.png"
-                            alt="Profile Picture" style="vertical-align: middle;border-style: none;border-radius: 50%;width: 30px;height: 30px;">
-                        @endif
-                        @endif
                         &nbsp;&nbsp;{{ Auth::user()->name }} <span class="caret"></span>
                     </a>
 

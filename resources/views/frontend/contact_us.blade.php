@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>contact us </title>
+    <title>contact </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="shortcut icon" type="png" href="cliparts/ambaza.png">
 
    <!-- CSS here -->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -25,6 +25,7 @@
 
 <body>
     <!-- Preloader Start -->
+    <!--
     <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
             <div class="preloader-inner position-relative">
@@ -35,7 +36,7 @@
             </div>
         </div>
     </div>
-    <!-- Preloader Start -->
+-->
     <header>
         <!-- Header Start -->
         <div class="header-area">
@@ -45,7 +46,7 @@
                             <!-- Logo -->
                             <div class="col-xl-2 col-lg-2 col-md-1">
                                 <div class="logo">
-                                    <a href="{{ url('/')}}"><img src="" alt="">Ambaza Marcellin</a>
+                                    <a href="{{ url('/')}}"><img src="{{asset('images/ambaza.png')}}" alt=""><span>Ambaza Marcellin</span></a>
                                 </div>
                             </div>
                             <div class="col-xl-10 col-lg-10 col-md-10">
@@ -54,17 +55,17 @@
                                     <div class="main-menu f-right d-none d-lg-block">
                                         <nav> 
                                             <ul id="navigation">
-                                                <li><a href="{{ url('/')}}">Home</a></li>
-                                                <li><a href="{{url('about-us')}}">About</a></li>
+                                                <li><a href="{{ url('/')}}">Accueil</a></li>
+                                                <li><a href="{{url('about-us')}}">A propos de nous</a></li>
                                                 <li><a href="{{url('services')}}">Services</a></li>
-                                                <li><a href="#">Life style</a>
+                                                <li><a href="#">Actualités</a>
                                                     <ul class="submenu">
                                                         <li><a href="{{url('blog')}}">Blog</a></li>
                                                         <li><a href="{{url('elements')}}">Ambaza</a></li>
                                                     </ul>
                                                 </li>
                                                 <li><a href="{{url('contact-us')}}">Contact</a></li>
-                                                <li><a href="{{ route('login') }}">Sign in</a></li>
+                                                <li><a href="{{ route('login') }}">Se connecter</a></li>
                                             </ul>
                                         </nav>
                                     </div>
@@ -89,10 +90,10 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="hero-cap">
-                                <h2>Contact Us</h2>
+                                <h2>Contact</h2>
                                 <nav aria-label="breadcrumb ">
                                     <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="{{ url('/')}}">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="{{ url('/')}}">Accueil</a></li>
                                     <li class="breadcrumb-item"><a href="#">Contact</a></li> 
                                     </ol>
                                 </nav>
@@ -108,34 +109,35 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h2 class="contact-title">Get in Touch</h2>
+                        <h2 class="contact-title">Entrer en contact avec moi</h2>
                     </div>
                     <div class="col-lg-8">
-                        <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                        <form class="form-contact contact_form" action="{{route('site.contact_us_form')}}" method="post" id="contactForm" novalidate="novalidate">
+                            @csrf
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder=" Enter Message"></textarea>
+                                        <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Entrer message'" placeholder=" Entrer message"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input class="form-control valid" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder="Enter your name">
+                                        <input class="form-control valid" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Votre nom'" placeholder="votre nom">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder="Email">
+                                        <input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Votre Adresse e-mail'" placeholder="Votre Adresse e-mail">
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="Enter Subject">
+                                        <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Entrer le sujet'" placeholder="Entrer le sujet">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group mt-3">
-                                <button type="submit" class="button button-contactForm boxed-btn">Send</button>
+                                <button type="submit" class="button button-contactForm boxed-btn">Envoyer</button>
                             </div>
                         </form>
                     </div>
@@ -151,14 +153,14 @@
                             <span class="contact-info__icon"><i class="ti-tablet"></i></span>
                             <div class="media-body">
                                 <h3>+257 71 16 43 10</h3>
-                                <p>Mon 8AM to 6PM</p>
+                                <p>24/24 , 7/7</p>
                             </div>
                         </div>
                         <div class="media contact-info">
                             <span class="contact-info__icon"><i class="ti-email"></i></span>
                             <div class="media-body">
-                                <h3>ambazamarcellin@gmail.com</h3>
-                                <p>Send us your message anytime!</p>
+                                <h3>ambazamarcellin2001@gmail.com</h3>
+                                <p>Envoyez-nous votre message à tout moment!</p>
                             </div>
                         </div>
                     </div>
@@ -177,7 +179,7 @@
                        <div class="col-lg-6">
                             <div class="footer-top-cap text-center">
                                 <a href="{{ url('/')}}"><img src="" alt="">Ambaza Marcellin</a>
-                                <span><a href="#">Developper</a></span>
+                                <span><a href="#">Informaticien</a></span>
                                 <p>Rohero,Boulevard de l'uprona</p>
                                 <p>Bujumbura,Burundi</p>
                             </div>
@@ -189,18 +191,18 @@
                         <div class="col-xl-9 col-lg-8">
                             <div class="footer-copy-right">
                                 <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Ambaza &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | <i class="fa fa-heart" aria-hidden="true"></i> by <a href="" target="_blank">Marcellin</a>
+  Ambaza &copy;<script>document.write(new Date().getFullYear());</script> Tous le droits sont réservés | <i class="fa fa-heart" aria-hidden="true"></i> par <a href="" target="_blank">Marcellin</a>
   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-4">
                             <!-- Footer Social -->
                             <div class="footer-social f-right">
-                                <a>Stay Connected</a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#"><i class="fas fa-globe"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a>Suivez-nous sur</a>
+                                <a href="https://twitter.com/Marcellin_dev"><i class="fab fa-twitter" title="Twitter"></i></a>
+                                <a href="https://www.facebook.com/ambazamarcelo/"><i class="fab fa-facebook-f" title="Facebook"></i></a>
+                                <a href="https://www.instagram.com/invites/contact/?i=1ebsx2q0kvxux&utm_content=5os9yu6"><i class="fab fa-instagram" title="Instagram"></i></a>
+                                <a href="https://github.com/Ambaza-Marcelo"><i class="fab fa-github" title="Github"></i></a>
                             </div>
                         </div>
                     </div>
@@ -209,9 +211,8 @@
         </div>
         <!-- Footer End-->
     </footer>
-    <!-- Scroll Up -->
     <div id="back-top" >
-        <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+        <a title="Aller au dessus" href="#"> <i class="fas fa-level-up-alt"></i></a>
     </div>
     <!-- JS here -->
 	

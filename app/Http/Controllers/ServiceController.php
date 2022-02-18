@@ -49,9 +49,9 @@ class ServiceController extends Controller
      */
     public function edit($id)
     {
-    	$services = Service::whereid($id)->first();
+    	$service = Service::whereid($id)->first();
         //
-        return view('backend.service.edit', compact('services'));
+        return view('backend.service.edit', compact('service'));
     }
 
     /**
@@ -67,7 +67,7 @@ class ServiceController extends Controller
         $request->validate([
             'title' => 'required|min:5|max:255',
             'description' => 'required',
-            'image' => 'mimes:jpeg,jpg,png|max:2048|dimensions:min_width=1900,min_height=1200',
+            'image' => 'mimes:jpeg,jpg,png|max:2048|dimensions:min_width=30,min_height=30',
 
         ]);
 

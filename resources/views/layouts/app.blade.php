@@ -12,6 +12,7 @@
     <title>@yield('title') - {{config('app.name')}}</title>
 
     <link rel="stylesheet" href="{{ url('css/loader.css') }}">
+    <link rel="shortcut icon" type="png" href="cliparts/ambaza.png">
 
     <script src="{{ url('js/vendors.js') }}"></script>
 

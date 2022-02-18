@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="manifest" href="site.webmanifest">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="shortcut icon" type="png" href="cliparts/ambaza.png">
 
     <!-- CSS here -->
             <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -25,6 +25,7 @@
 
    <body>
     <!-- Preloader Start -->
+    <!--
     <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
             <div class="preloader-inner position-relative">
@@ -35,6 +36,7 @@
             </div>
         </div>
     </div>
+-->
     <!-- Preloader Start -->
     <header>
         <!-- Header Start -->
@@ -45,7 +47,7 @@
                             <!-- Logo -->
                             <div class="col-xl-2 col-lg-2 col-md-1">
                                 <div class="logo">
-                                    <a href="{{ url('/')}}"><img src="" alt="">Ambaza Marcellin</a>
+                                    <a href="{{ url('/')}}"><img src="{{asset('images/ambaza.png')}}" alt=""><span>Ambaza Marcellin</span></a>
                                 </div>
                             </div>
                             <div class="col-xl-10 col-lg-10 col-md-10">
@@ -54,17 +56,17 @@
                                     <div class="main-menu f-right d-none d-lg-block">
                                         <nav> 
                                             <ul id="navigation">
-                                                <li><a href="{{ url('/')}}">Home</a></li>
-                                                <li><a href="{{url('about-us')}}">About</a></li>
+                                                <li><a href="{{ url('/')}}">Accueil</a></li>
+                                                <li><a href="{{url('about-us')}}">A propos de nous</a></li>
                                                 <li><a href="{{url('services')}}">Services</a></li>
-                                                <li><a href="#">Life style</a>
+                                                <li><a href="#">Actualités</a>
                                                     <ul class="submenu">
                                                         <li><a href="{{url('blog')}}">Blog</a></li>
                                                         <li><a href="{{url('elements')}}">Ambaza</a></li>
                                                     </ul>
                                                 </li>
                                                 <li><a href="{{url('contact-us')}}">Contact</a></li>
-                                                <li><a href="{{ route('login') }}">Sign in</a></li>
+                                                <li><a href="{{ route('login') }}">Se connecter</a></li>
                                             </ul>
                                         </nav>
                                     </div>
@@ -92,12 +94,12 @@
                         <div class="row">
                             <div class="col-xl-6 col-lg-6 col-md-8">
                                 <div class="hero__caption">
-                                    <span data-animation="fadeInUp" data-delay=".4s">Get Every IT Solutions.</span>
-                                    <h1 data-animation="fadeInUp" data-delay=".6s">I’m Full stack developper Ambaza Marcellin</h1>
-                                    <P data-animation="fadeInUp" data-delay=".8s" >I do software engineering,i have experience in web development, mobile development,network and datacenter.</P>
-                                    <!-- Hero-btn -->
+                                    <span data-animation="fadeInUp" data-delay=".4s">Obtenez les solutions IT</span>
+                                    <h1 data-animation="fadeInUp" data-delay=".6s">Je suis Ambaza Marcellin</h1>
+                                    <P data-animation="fadeInUp" data-delay=".8s" >je suis un jeune de services en génié logiciel, dans le domaine des Technologies d'information et de la communication (TIC) et des systèmes d'information.
+                                    je vous accompagne et conseille sur toutes les phases de vos projets de transformation digitale.</P>
                                     <div class="hero__btn">
-                                        <a href="{{url('contact-us')}}" class="btn hero-btn"  data-animation="fadeInLeft" data-delay=".8s">Learn More</a>
+                                        <a href="{{url('contact-us')}}" class="btn hero-btn"  data-animation="fadeInLeft" data-delay=".8s">Plus...</a>
                                     </div>
                                 </div>
                             </div>
@@ -113,15 +115,15 @@
                 <div class="row ">
                     <div class="col-lg-5">
                         <div class="about-caption mb-50">
-                            <h3>The World Technological.</h3>
-                            <p class="pera1">Welcome in the world technological,where all sectors like agriculture,education,health,transport can be digitized.</p>
-                            <p>Let's live in the world technological.</p>
+                            <h3>Dévéloppement sur mesure.</h3>
+                            <p class="pera1">je suis également spécialisée dans la création de sites internet sur-mesure, 
+                            je prends en charge votre site internet depuis son design jusqu'à la mise en ligne.</p>
                         </div>
                     </div>
                     <div class="col-lg-5 offset-lg-1">
                         <div class="about-caption2">
-                            <h3>you can discuss with me<br> & Discussion.</h3>
-                            <p>talk with me.</p>
+                            <h3>Vous pouvez discuter avec moi<br> & Discussion.</h3>
+                            <p>Discutez avec moi.</p>
                            <div class="send-cv">
                                 <a href="mailto:ambazamarcellin200@gmail.com">Ambaza Marcellin.</a>
                                 <i class="ti-arrow-right"></i>
@@ -139,7 +141,7 @@
                     <div class="col-lg-6">
                         <!-- Section Tittle -->
                         <div class="section-tittle mb-70">
-                            <h2>What Services you will Get from me!</h2>
+                            <h2>Quels services vous obtiendrez de moi !</h2>
                         </div>
                     </div>
                 </div>
@@ -169,7 +171,7 @@
                         <div class="col-lg-6">
                             <!-- Section Tittle -->
                             <div class="section-tittle">
-                                <h2>What Services you will Get from me!</h2>
+                                <h2>Quels services vous obtiendrez de moi !</h2>
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -177,9 +179,9 @@
                                 <!--Nav Button  -->                                            
                                 <nav>
                                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="false"> All</a>
-                                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Web Development</a>
-                                        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Mobile Developpment</a>
+                                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="false"> Tout</a>
+                                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Dévéloppement web</a>
+                                        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Dévéloppement mobile</a>
                                     </div>
                                 </nav>
                                 <!--End Nav Button  -->
@@ -306,80 +308,141 @@
                 <div class="row align-items-center justify-content-between">
                     <div class="col-xl-6 col-lg-8 col-md-8">
                         <div class="wantToWork-caption wantToWork-caption2">
-                            <h2>contact me, i'm available</h2>
+                            <h2>contactez-moi, je suis disponible</h2>
                         </div>
                     </div>
                     <div class="col-xl-2 col-lg-2 col-md-3">
-                        <a href="tel:71164310" class="btn btn-black f-right">Contact Me Now</a>
+                        <a href="tel:71164310" class="btn btn-black f-right">Contactez-moi maintenant</a>
                     </div>
                 </div>
             </div>
         </section>
         <!-- Want To Work End -->
 
-        <!-- client-comments -->
-        <section class="client-comments section-paddingt30">
+        <div class="client-comments section-paddingt30">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-6 col-lg-8 col-md-10">
                         <!-- Section Tittle -->
                         <div class="section-tittle mb-70">
-                            <h2>Some Possitive Feedback  That Encourage Us</h2>
+                            <h2>Quelques commentaires positifs qui nous encouragent</h2>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- latest-blog-area start -->
             <div class="latest-blog-area">
                 <div class="container">
                     <div class="custom-row">
                         <div class="blog-active">
-                            @foreach($encourages as $encourage)
-                            <div class="col-xl-10">
+                            <!-- single-items -->
+                            <div class="col-xl-4">
                                 <div class="blog-wrapper">
+                                    <div class="blog-inner">
+                                    <div class="blog-top">
+                                        <div class="person-img">
+                                            <img src="{{asset('images/clipart2.png')}}" alt="">
+                                        </div>
+                                        <div class="comment-person">
+                                            <h2>Nimushimirimana Huzaifa</h2>   
+                                            <span>Dévéloppeur full stack</span>
+                                        </div>
+                                    </div>
+                                        <p>Un bon programmeur que j'adore ambaza marcellin qui a l'esprit de l’innovation, la créativité, l’originalité et sérieux.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- single-items -->
+                            <div class="col-xl-4">
+                                <div class="blog-wrapper">
+                                    <div class="blog-inner">
                                     <div class="blog-top">
                                             <div class="person-img">
-                                                <img src="{{ asset('storage/encourages')}}/{{$encourage->image}}" alt="" width="200" height="250" style="border-radius: 50%;">
+                                                <img src="{{asset('images/clipart2.png')}}" alt="">
                                             </div>
-                                    
+                                            <div class="comment-person">
+                                                <h2>Ndayiragije Thierry</h2>   
+                                                <span>Dévéloppeur Frontend</span>
+                                            </div>
                                     </div>
-                                        <div class="comment-person">
-                                            <h3>{{$encourage->name}}</h3>   
-                                            <h4>{{$encourage->service->title}}</h4>
-                                        </div>
-                                        <p>{{$encourage->description}}</p>
-                                        </div>
+                                        <p>Ce jeune est un vrai programmeur,on a travaillé ensemble dans la société net-telecom,il était courageux et il avait une expertise en Laravel.</p>
                                     </div>
-                                @endforeach
+                                </div>
+                            </div>
+                            <!-- single-items -->
+                            <div class="col-xl-4">
+                                <div class="blog-wrapper">
+                                    <div class="blog-inner">
+                                    <div class="blog-top">
+                                            <div class="person-img">
+                                                <img src="{{asset('images/clipart2.png')}}" alt="">
+                                            </div>
+                                            <div class="comment-person">
+                                                <h2>Ndikumagenge Blaise</h2>   
+                                                <span>Dévéloppeur Backend</span>
+                                            </div>
+                                    </div>
+                                        <p>j'ai connu ce jeune dévéloppeur en 2019 lors de la presentation du logiciel de la gestion academique sur notre université du Lac Tanganyika.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- single-items -->
+                            <div class="col-xl-4">
+                                <div class="blog-wrapper">
+                                    <div class="blog-inner">
+                                    <div class="blog-top">
+                                            <div class="person-img">
+                                                <img src="{{asset('images/clipart2.png')}}" alt="">
+                                            </div>
+                                            <div class="comment-person">
+                                                <h2>Mwinyi Séraphin</h2>   
+                                                <span>Dévéloppeur Backend</span>
+                                            </div>
+                                    </div>
+                                        <p>un jeune motivé,courageux et qui voudrait toujours connaitre les nouvelles technologies surtout dans le domaine de génie logiciel.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>          
+                    </div>
+                </div>
+            </div>           
             <!-- End latest-blog-area -->
+        </div>
         </section>
         <!-- Brand Area Start -->
         <div class="brand-area pb-bottom">
             <div class="container">
                 <div class="brand-active brand-border pt-50 pb-40">
                     <div class="single-brand">
-                        <img src="{{ asset('images/1000.jpg')}}" width="100" height="50" alt="">
+                        <img src="{{ asset('cliparts/laravel.png')}}" alt="">
                     </div>
                     <div class="single-brand">
-                        <img src="{{ asset('images/2000.jpg')}}" width="100" height="50" alt="">
+                        <img src="{{ asset('cliparts/java-coffee.png')}}" alt="">
                     </div>
                     <div class="single-brand">
-                        <img src="{{ asset('images/3000.jpg')}}" width="100" height="50" alt="">
+                        <img src="{{ asset('cliparts/bootstrap.png')}}" alt="">
                     </div>
                     <div class="single-brand">
-                        <img src="{{ asset('images/4000.jpg')}}" width="100" height="50" alt="">
+                        <img src="{{ asset('cliparts/c-sharp.png')}}" alt="">
                     </div>
                     <div class="single-brand">
-                        <img src="{{ asset('images/5000.jpg')}}" width="100" height="50" alt="">
+                        <img src="{{ asset('cliparts/c-plus-plus.png')}}" alt="">
                     </div>
                     <div class="single-brand">
-                        <img src="{{ asset('images/7000.jpg')}}" width="100" height="50" alt="">
+                        <img src="{{ asset('cliparts/python.png')}}" alt="">
                     </div>
                     <div class="single-brand">
-                        <img src="{{ asset('images/6000.jpg')}}" width="100" height="50" alt="">
+                        <img src="{{ asset('cliparts/mysql.png')}}" alt="">
+                    </div>
+                    <div class="single-brand">
+                        <img src="{{ asset('cliparts/android-studio.png')}}" alt="">
+                    </div>
+                    <div class="single-brand">
+                        <img src="{{ asset('cliparts/css3.png')}}" alt="">
+                    </div>
+                    <div class="single-brand">
+                        <img src="{{ asset('cliparts/php-logo.png')}}" alt="">
                     </div>
                 </div>
             </div>
@@ -391,18 +454,19 @@
                 <div class="row justify-content-between">
                     <div class="col-xl-5 col-lg-7">
                       <div class="contact-caption mb-50">
-                            <h3>If Not Now, When? Let’s Work Together!</h3>
-                            <p>let's work together in order to do more about technology and to develop our pretty country.
-                            my vision is to see burundians youngs do more like software,robots,etc.</p>
+                            <h3>Si pas maintenant quand? Travaillons ensemble !</h3>
+                            <p>travaillons ensemble afin d'en faire plus sur la technologie et de développer notre beau pays.
+                            mon objectif est d’aider plus d'un million de sociétés au Burundi à trouver un systeme de gestion.</p>
                             
                       </div>
                     </div>
                     <div class="col-xl-5 col-lg-5">
-                        <form action="#" class="contact-wrapper">
-                            <input type="text" name="name" placeholder="Full Name">
-                            <input type="email" name="email" placeholder="Email Address">
-                            <textarea name="message" id="message" placeholder="Your Message"></textarea>
-                            <button class="submit-btn2" type="submit">Send Message</button>
+                        <form action="{{route('site.contact_us_form')}}" class="contact-wrapper" method="post">
+                            @csrf
+                            <input type="text" name="name" placeholder="Votre nom">
+                            <input type="email" name="email" placeholder="Adresse e-mail">
+                            <textarea name="message" id="message" placeholder="Votre message"></textarea>
+                            <button class="submit-btn2" type="submit">Envoyer un message</button>
                         </form>
                     </div>
                 </div>
@@ -420,7 +484,7 @@
                        <div class="col-lg-6">
                             <div class="footer-top-cap text-center">
                                 <a href="{{ url('/')}}"><img src="" alt="">Ambaza Marcellin</a>
-                                <span><a href="#">Developper</a></span>
+                                <span><a href="#">Informaticien</a></span>
                                 <p>Rohero,Boulevard de l'uprona</p>
                                 <p>Bujumbura,Burundi</p>
                             </div>
@@ -432,18 +496,18 @@
                         <div class="col-xl-9 col-lg-8">
                             <div class="footer-copy-right">
                                 <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Ambaza &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | <i class="fa fa-heart" aria-hidden="true"></i> by <a href="" target="_blank">Marcellin</a>
+  Ambaza &copy;<script>document.write(new Date().getFullYear());</script> Tous les droits sont réservés | <i class="fa fa-heart" aria-hidden="true"></i> par <a href="" target="_blank">Marcellin</a>
   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-4">
                             <!-- Footer Social -->
                             <div class="footer-social f-right">
-                                <a>Stay Connected</a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#"><i class="fas fa-whatsapp"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a>Suivez-nous sur</a>
+                                <a href="https://twitter.com/Marcellin_dev"><i class="fab fa-twitter" title="Twitter"></i></a>
+                                <a href="https://www.facebook.com/ambazamarcelo/"><i class="fab fa-facebook-f" title="Facebook"></i></a>
+                                <a href="https://www.instagram.com/invites/contact/?i=1ebsx2q0kvxux&utm_content=5os9yu6"><i class="fab fa-instagram" title="Instagram"></i></a>
+                                <a href="https://github.com/Ambaza-Marcelo"><i class="fab fa-github" title="Github"></i></a>
                             </div>
                         </div>
                     </div>
@@ -454,7 +518,7 @@
     </footer>
     <!-- Scroll Up -->
     <div id="back-top" >
-        <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+        <a title="Aller au dessus" href="#"> <i class="fas fa-level-up-alt"></i></a>
     </div>
 
     <!-- JS here -->
