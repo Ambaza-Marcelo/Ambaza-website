@@ -16,7 +16,7 @@
 
                     <div class="jumbotron">
                         <img src="{{asset('images/clipart5.png')}}" alt="subscribers">
-                        <span>Abonnés</span>
+                        <span>@lang('messages.subscriber')</span>
                         <span">{{$subscribers}}<small></small></span>
                     </div>
                 </div>
@@ -26,7 +26,7 @@
                 <div class="">
                     <div class="jumbotron">
                         <img src="{{asset('images/clipart3.png')}}" alt="photos">
-                        <span class="i">Photos</span>
+                        <span class="i">@lang('messages.gallery')</span>
                         <span class="">{{$photos}}</span>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
 
                     <div class="jumbotron">
                         <img src="{{asset('images/clipart2.png')}}" alt="subscribers">
-                        <span>Dévélopé par:Ambaza-Marcellin</span>
+                        <span>@lang('messages.developped_by') : Ambaza-Marcellin</span>
                     </div>
                 </div>
             </div>

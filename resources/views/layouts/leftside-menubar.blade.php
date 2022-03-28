@@ -25,38 +25,33 @@
 </style>
 <ul class="nav flex-column">
   <li class="nav-item active">
-    <a class="nav-link" href="{{ url('home') }}"><span class="nav-link-text">@lang('Tableau de bord')</span></a>
+    <a class="nav-link" href="{{ url('home') }}"><span class="nav-link-text">@lang('messages.dashboard')</span></a>
   </li>
   
   @if(Auth::user()->role == 'admin' || Auth::user()->role == 'technician')
-  <li class="nav-item dropdown">
-    <a role="button" href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="nav-link-text">@lang('Site')</span></a>
-    <ul class="dropdown-menu" style="width: 100%;">
-      <li class="nav-item">
-        <a class="dropdown-item" href="{{ URL::route('site.dashboard') }}"><span class="nav-link-text">@lang('Analytique')</span></a>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ URL::route('site.dashboard') }}"><span class="nav-link-text">@lang('messages.analytic')</span></a>
       </li>
       <li class="nav-item">
-        <a class="dropdown-item" href="{{ URL::route('site.subscribe') }}"><span class="nav-link-text">@lang('Abonnés')</span></a>
+        <a class="nav-link" href="{{ URL::route('site.subscribe') }}"><span class="nav-link-text">@lang('messages.subscriber')</span></a>
       </li>
       <li class="nav-item">
-        <a class="dropdown-item" href="{{ URL::route('site.gallery') }}"><span class="nav-link-text">@lang('Gallerie')</span></a>
+        <a class="nav-link" href="{{ URL::route('site.gallery') }}"><span class="nav-link-text">@lang('messages.gallery')</span></a>
       </li>
-    </ul>
     <li class="nav-item">
-        <a class="nav-link" href="{{route('admin-news-list')}}"><span class="nav-link-text">@lang('News')</span></a>
+        <a class="nav-link" href="{{route('admin-news-list')}}"><span class="nav-link-text">@lang('messages.news')</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="{{route('admin-service-list')}}"><span class="nav-link-text">@lang('Services')</span></a>
+        <a class="nav-link" href="{{route('admin-service-list')}}"><span class="nav-link-text">@lang('messages.services')</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="{{route('admin-about-list')}}"><span class="nav-link-text">@lang('About')</span></a>
+        <a class="nav-link" href="{{route('admin-about-list')}}"><span class="nav-link-text">@lang('messages.about')</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="{{route('admin-encourage-list')}}"><span class="nav-link-text">@lang('Encourage')</span></a>
+        <a class="nav-link" href="{{route('admin-encourage-list')}}"><span class="nav-link-text">@lang('messages.encourage')</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="{{route('admin-post-list')}}"><span class="nav-link-text">@lang('Post')</span></a>
+        <a class="nav-link" href="{{route('admin-post-list')}}"><span class="nav-link-text">@lang('messages.post')</span></a>
     </li>
-  </li>
   @endif
 </ul>

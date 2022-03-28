@@ -23,8 +23,17 @@
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
                 <!-- Authentication Links -->
+                <li>
+                    <select class="form-control changeLang">
+                            <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>@lang('messages.english')</option>
+
+                        <option value="ki" {{ session()->get('locale') == 'ki' ? 'selected' : '' }}>Kirundi</option>
+
+                        <option value="fr" {{ session()->get('locale') == 'fr' ? 'selected' : '' }}>@lang('messages.french')</option>
+                </select>
+                </li>
                 @guest
-                <li><a href="{{ route('login') }}" style="color: #000;">@lang('Se connecter')</a></li>
+                <li><a href="{{ route('login') }}" style="color: #000;">@lang('messages.sigin')</a></li>
                 @else
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle nav-link-align-btn" data-toggle="dropdown" role="button"
@@ -37,12 +46,12 @@
 
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="{{url('user/config/change_password')}}">@lang('Changer mot de passe')</a>
+                            <a href="{{url('user/config/change_password')}}">@lang('messages.changepwd')</a>
                         </li>
                         <li>
                             <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
-                                @lang('Se déconnecter')
+                                @lang('messages.siginout')
                             </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -56,3 +65,10 @@
         </div>
     </div>
 </nav>
+
+<script type="text/javascript">
+    var url = "{{ route('changeLang')}}";
+    $(".changeLang").change(function(){
+        window.location.href = url + "?lang=" + $(this).val();
+    });
+</script>

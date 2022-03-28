@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Helpers\AppHelper;
+use App;
 
 class SiteController extends Controller
 {
@@ -127,6 +128,13 @@ class SiteController extends Controller
     public function contactUs(Request $request)
     {
         
+    }
+
+    public function changeLanguage(Request $request){
+        App::setlocale($request->lang);
+        session()->put("locale",$request->lang);
+
+        return redirect()->back();
     }
 
 }

@@ -3,6 +3,7 @@
 
 Route::get('/', 'WelcomeController@home')->name('home');
 
+Route::get("change/lang","SiteController@changeLanguage")->name("changeLang");
 
 Route::get('/welcome-page','WelcomeController@home')->name('welcome-page');
 

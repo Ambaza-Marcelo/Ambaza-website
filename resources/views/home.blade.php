@@ -26,7 +26,7 @@
                     <div class="col-sm-16">
                             <div class="panel panel-default" style="background-color: rgba(242,245,245,0.8);">
                                 <div class="panel-body">
-                                    <h3>@lang('Welcome To Ambaza Marcellin website') </h3>
+                                    <h3> @lang('messages.welcome') </h3>
                                     <img src="assets/img/8000.svg" height="100">
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -52,7 +52,7 @@
                         <div class="col-md-6 col-sm-14">
                                     <a href="{{url('register/technician')}}">
                                     <img src="{{asset('assets/img/9000.svg')}}" height="200" alt="photos">
-                                    <span class="i">Techniciens</span>
+                                    <span class="i">@lang('messages.technician')</span>
                                     </a>               
                         </div>
                         <div class="col-md-6 col-sm-14">
