@@ -44,8 +44,6 @@ class UserService {
         $tb->password = bcrypt($request->password);
         $tb->role = 'admin';
         $tb->active = 1;
-        $tb->hotel_id = session('register_hotel_id');
-        $tb->code = session('register_hotel_code');
         $tb->gender = $request->gender;
         $tb->blood_group = $request->blood_group;
         $tb->nationality = (!empty($request->nationality)) ? $request->nationality : '';
@@ -69,23 +67,6 @@ class UserService {
         //$tb->phone_number = $request->phone_number;
         $tb->address = (!empty($request->address)) ? $request->address : '';
         $tb->about = (!empty($request->about)) ? $request->about : '';
-        $tb->pic_path = (!empty($request->pic_path)) ? $request->pic_path : '';
-        $tb->verified = 1;
-        $tb->save();
-        return $tb;
-    }
-
-    public function storeAccountant($request, $role){
-        $tb = new $this->user;
-        $tb->name = $request->name;
-        $tb->email = (!empty($request->email)) ? $request->email : '';
-        $tb->password = bcrypt($request->password);
-        $tb->role = $role;
-        $tb->active = 1;
-        $tb->gender = $request->gender;
-        $tb->blood_group = $request->blood_group;
-        $tb->nationality = (!empty($request->nationality)) ? $request->nationality : '';
-        $tb->phone_number = $request->phone_number;
         $tb->pic_path = (!empty($request->pic_path)) ? $request->pic_path : '';
         $tb->verified = 1;
         $tb->save();
