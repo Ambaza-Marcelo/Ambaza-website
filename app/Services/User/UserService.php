@@ -27,11 +27,7 @@ class UserService {
         ]);
     }
     
- 
 
-    public function isAccountant($role){
-        return $role == 'accountant';
-    }
 
     public function indexOtherView($view, $users){
         return view($view, [
@@ -39,15 +35,6 @@ class UserService {
             'current_page' => $users->currentPage(),
             'per_page' => $users->perPage(),
         ]);
-    }
-
-    public function getAccountants(){
-        return $this->user->with('hotel')
-                ->where('code', auth()->user()->hotel->code)
-                ->where('role', 'accountant')
-                ->where('active', 1)
-                ->orderBy('name', 'asc')
-                ->paginate(50);
     }
 
     public function storeAdmin($request){
