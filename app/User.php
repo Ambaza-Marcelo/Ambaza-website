@@ -39,15 +39,6 @@ class User extends Model implements
         'password', 'remember_token',
     ];
 
-    public function scopeCustomer($q)
-    {
-        return $q->where('role', 'customer');
-    }
-
-    public function hotel()
-    {
-        return $this->belongsTo('App\Hotel');
-    }
     
     public function hasRole(string $role): bool
     {

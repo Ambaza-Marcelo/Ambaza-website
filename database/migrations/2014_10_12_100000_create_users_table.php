@@ -20,8 +20,6 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('role');
             $table->tinyInteger('active');
-            $table->integer('hotel_id')->nullable();
-            $table->integer('code')->nullable();
             $table->string('gender')->default('');
             $table->string('blood_group')->default('');
             $table->string('nationality')->default('');
