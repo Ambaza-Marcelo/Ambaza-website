@@ -37,7 +37,7 @@
                             <!-- Logo -->
                             <div class="col-xl-2 col-lg-2 col-md-1">
                                 <div class="logo">
-                                    <a href="{{ url('/')}}"><img src="{{asset('images/ambaza.png')}}" alt=""><span>Ambaza Marcellin</span></a>
+                                    <a href="{{ url('/')}}"><img src="{{asset('images/ambazamarcellin.png')}}" alt=""><span>Ambaza Marcellin</span></a>
                                 </div>
                             </div>
                             <div class="col-xl-10 col-lg-10 col-md-10">
